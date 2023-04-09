@@ -65,9 +65,24 @@ const calcularPromedio = ( acumulado, cantidad ) => { return acumulado / cantida
 const despedirse = () => { alert( "Hasta luego" ); }
 
 const imprimirCatalogo = () => {
+
+    const catalogoDiv = document.querySelector("#catalogo");
+    catalogoDiv.innerHTML = "";
+
+    const titulo = document.createElement("h2");
+    titulo.innerHTML = "Catálogo de productos";
+    catalogoDiv.appendChild(titulo);
+
+    const lista = document.createElement("ul");
+
     for( const producto of catalogo ){
-        console.log( producto.nombre );
+        const item = document.createElement("li");
+        item.innerText = producto.nombre;
+        lista.appendChild(item);
     }
+
+    catalogoDiv.appendChild(lista);
+
 }
 
 const buscarProducto = () => {
