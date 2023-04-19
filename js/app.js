@@ -5,7 +5,8 @@ function Producto( nombre, precio, cantidad ) {
     this.cantidad = cantidad;
 }
 
-const catalogo = [
+//Catálogo por defecto
+const catalogoInicial = [
     {nombre: "lija 60", precio: 90, cantidad: 500},
     {nombre: "lija 80", precio: 90, cantidad: 400},
     {nombre: "lija 100", precio: 90, cantidad: 200},
@@ -17,68 +18,47 @@ const catalogo = [
     {nombre: "cinta enmascarar 40mts x 36 mm", precio: 360, cantidad: 100},
 ];
 
-const cargarProductos = () => {
 
-    let acumPrecio = 0;
-    let acumCantidad = 0;
-    let cantidadProductos = 0;
-    const salida = 'SALIR';
+const cargarProducto = () => {
+    //limpio los mensajes
+    borrarMensajes();
 
-    let nombreProducto = '';
-    let cantidadProducto;
-    let precioProducto;
-
-    alert( "Comenzando la carga de productos de la tienda..." );
-
-    while( nombreProducto != salida ){
+    //recupero el catálogo del storage
+    let catalogo = JSON.parse(sessionStorage.getItem( "catalogo" ));
+    if(catalogo == null) { catalogo = []; }
     
-        nombreProducto = prompt( "Ingrese el nombre del producto o " + salida + " para terminar" );
-        
-        if(nombreProducto != salida){
-            precioProducto = parseInt( prompt( 'Ingrese el precio del producto' ) );
-            cantidadProducto = parseInt( prompt( 'Ingrese la cantidad del producto' ) );
+    let nombreProducto = document.querySelector( "#nombre" ).value;
+    let precioProducto = document.querySelector( "#precio" ).value;
+    let cantidadProducto = document.querySelector( "#cantidad" ).value;
 
-            p = new Producto( nombreProducto, precioProducto, cantidadProducto );
-            catalogo.push( p );
+    p = new Producto( nombreProducto, precioProducto, cantidadProducto );
+    catalogo.push( p );
 
-            acumPrecio += precioProducto;
-            acumCantidad += cantidadProducto;
+    sessionStorage.setItem( "catalogo", JSON.stringify( catalogo ) );
 
-            cantidadProductos++;
-        }
-
-    }
-
-    if( cantidadProductos == 0 ){
-        alert( "No se ingresaron productos para procesar" );
-    } else {
-        let promPrecio = calcularPromedio( acumPrecio, cantidadProductos );
-        let promCantidades = calcularPromedio( acumCantidad, cantidadProductos );
-        alert( "Se procesaron " + cantidadProductos + " con un promedio de precio de " + promPrecio + " y el promedio de cantidades fue " + promCantidades );
-    }
-
-    despedirse();
+    document.querySelector( "#mensaje" ).textContent = `Se agregó el producto: ${nombreProducto} con un precio de: ${precioProducto} y un stock de: ${cantidadProducto} unidades`;
 }
 
-const calcularPromedio = ( acumulado, cantidad ) => { return acumulado / cantidad; }
+const mostrarCarga = () => {
+    borrarMensajes();
 
-const despedirse = () => { alert( "Hasta luego" ); }
+    //muestro los campos a completar
+    const inputsAlta = document.querySelector( "#inputsAlta" );
+    inputsAlta.style.display = "";
+}
 
 const imprimirCatalogo = () => {
+    borrarMensajes();
 
-    const catalogoDiv = document.querySelector("#catalogo");
-    catalogoDiv.innerHTML = "";
+    let catalogoStorage = JSON.parse( sessionStorage.getItem( "catalogo" ) );
+    document.querySelector( "#mensaje" ).textContent = "Imprimiendo catálogo";
+    
+    const lista = document.querySelector( "#lista" );
 
-    const titulo = document.createElement("h2");
-    titulo.innerHTML = "Catálogo de productos";
-    catalogoDiv.appendChild(titulo);
-
-    const lista = document.createElement("ul");
-
-    for( const producto of catalogo ){
-        const item = document.createElement("li");
-        item.innerText = producto.nombre;
-        lista.appendChild(item);
+    for( const producto of catalogoStorage ){
+        let item = document.createElement( "li" );
+        item.textContent = `Producto: ${producto.nombre} - Precio: ${producto.precio} - Cantidad: ${producto.cantidad}`;
+        lista.appendChild( item );
     }
 
     catalogoDiv.appendChild(lista);
@@ -86,15 +66,43 @@ const imprimirCatalogo = () => {
 }
 
 const buscarProducto = () => {
-    let busqueda = prompt( "Ingrese producto a buscar:" );
+    borrarMensajes();
+
+    document.querySelector( "#mensaje" ).textContent = "Buscando producto:";
+
+    let catalogoStorage = JSON.parse(sessionStorage.getItem( "catalogo" ));
+    let itemText;
+
+    const busquedaField = document.querySelector( "#busqueda" );
+    const busqueda = busquedaField.value;
+    
     if( busqueda != "" ){
-        let encontrado = catalogo.find( el => el.nombre.includes( busqueda ) );
-        alert ( encontrado != undefined ? encontrado.nombre : "no se encontró" );
+        let encontrado = catalogoStorage.find( el => el.nombre.includes( busqueda ) );
+        itemText = encontrado != undefined ?  `Producto: ${encontrado.nombre} - Precio: ${encontrado.precio} - Cantidad: ${encontrado.cantidad}` : "no se encontró";
+        busquedaField.value = "";
     } else {
-        alert( "No se ingresó producto" );
+        itemText = "No se ingresó producto";
     }
+
+    let item = document.createElement( "li" );
+    item.textContent = itemText;
+    document.querySelector( "#lista" ).appendChild(item);
 }
 
-//cargarProductos();
-//imprimirCatalogo();
-//buscarProducto();
+const inicializarCatalogo = () => {
+    borrarMensajes();
+
+    sessionStorage.setItem( "catalogo", JSON.stringify( catalogoInicial ) );
+    document.querySelector( "#mensaje" ).textContent = "Se inicializó el catálogo por defecto";
+}
+
+const borrarMensajes = () => {
+    document.querySelector( "#inputsAlta" ).style.display = "none";
+    document.querySelector( "#mensaje" ).textContent = "";
+    document.querySelector( "#lista" ).innerHTML = "";
+}
+
+document.querySelector( "#btnGuardar" ).addEventListener( "click", ( e ) => {
+    e.preventDefault();
+    cargarProducto();
+});
