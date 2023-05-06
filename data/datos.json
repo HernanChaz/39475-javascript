@@ -1,0 +1,205 @@
+[
+    {
+       "id":1,
+       "nombre":"lija al agua 60",
+       "precio":102.50,
+       "cantidad":"100",
+       "imagen": "./images/lijas.png"
+    },
+    {
+       "id":2,
+       "nombre":"lija al agua 80",
+       "precio":102.50,
+       "cantidad":"100",
+       "imagen": "./images/lijas.png"
+    },
+    {
+       "id":2,
+       "nombre":"lija al agua 100",
+       "precio":102.50,
+       "cantidad":"100",
+       "imagen": "./images/lijas.png"
+    },
+    {
+       "id":3,
+       "nombre":"lija al agua 120",
+       "precio":102.50,
+       "cantidad":"100",
+       "imagen": "./images/lijas.png"
+    },
+    {
+       "id":4,
+       "nombre":"lija al agua 150",
+       "precio":102.50,
+       "cantidad":"100",
+       "imagen": "./images/lijas.png"
+    },
+    {
+       "id":5,
+       "nombre":"lija al agua 180",
+       "precio":102.50,
+       "cantidad":"100",
+       "imagen": "./images/lijas.png"
+    },
+    {
+       "id":6,
+       "nombre":"lija al agua 220",
+       "precio":102.50,
+       "cantidad":"100",
+       "imagen": "./images/lijas.png"
+    },
+    {
+       "id":7,
+       "nombre":"lija al agua 240",
+       "precio":102.50,
+       "cantidad":"100",
+       "imagen": "./images/lijas.png"
+    },
+    {
+       "id":8,
+       "nombre":"lija al agua 280",
+       "precio":102.50,
+       "cantidad":"100",
+       "imagen": "./images/lijas.png"
+    },
+    {
+       "id":9,
+       "nombre":"lija al agua 320",
+       "precio":102.50,
+       "cantidad":"100",
+       "imagen": "./images/lijas.png"
+    },
+    {
+       "id":10,
+       "nombre":"lija al agua 360",
+       "precio":102.50,
+       "cantidad":"100",
+       "imagen": "./images/lijas.png"
+    },
+    {
+       "id":11,
+       "nombre":"lija al agua 400",
+       "precio":102.50,
+       "cantidad":"100",
+       "imagen": "./images/lijas.png"
+    },
+    {
+       "id":12,
+       "nombre":"lija al agua 500",
+       "precio":102.50,
+       "cantidad":"100",
+       "imagen": "./images/lijas.png"
+    },
+    {
+       "id":13,
+       "nombre":"lija al agua 600",
+       "precio":102.50,
+       "cantidad":"100",
+       "imagen": "./images/lijas.png"
+    },
+    {
+       "id":14,
+       "nombre":"lija al agua 1000",
+       "precio":132.00,
+       "cantidad":"100",
+       "imagen": "./images/lijas.png"
+    },
+    {
+       "id":15,
+       "nombre":"lija al agua 1200",
+       "precio":132.00,
+       "cantidad":"100",
+       "imagen": "./images/lijas.png"
+    },
+    {
+       "id":16,
+       "nombre":"lija al agua 1500",
+       "precio":132.00,
+       "cantidad":"100",
+       "imagen": "./images/lijas.png"
+    },
+    {
+       "id":17,
+       "nombre":"lija al agua 2000",
+       "precio":197.00,
+       "cantidad":"100",
+       "imagen": "./images/lijas.png"
+    },
+    {
+       "id":18,
+       "nombre":"lija al agua 2500",
+       "precio":197.00,
+       "cantidad":"100",
+       "imagen": "./images/lijas.png"
+    },
+    {
+       "id":19,
+       "nombre":"lija al agua 2500",
+       "precio":197.00,
+       "cantidad":"100",
+       "imagen": "./images/lijas.png"
+    },
+    {
+       "id":20,
+       "nombre":"Cinta obra azul 40 mts x 18 mm",
+       "precio":296.00,
+       "cantidad":"100",
+       "imagen": "./images/cinta-obra.png"
+    },
+    {
+       "id":21,
+       "nombre":"Cinta obra azul 40 mts x 24 mm",
+       "precio":392.50,
+       "cantidad":"100",
+       "imagen": "./images/cinta-obra.png"
+    },
+    {
+       "id":22,
+       "nombre":"Cinta obra azul 40 mts x 36 mm",
+       "precio":588.00,
+       "cantidad":"100",
+       "imagen": "./images/cinta-obra.png"
+    },
+    {
+       "id":23,
+       "nombre":"Cinta obra azul 40 mts x 48 mm",
+       "precio":786.00,
+       "cantidad":"100",
+       "imagen": "./images/cinta-obra.png"
+    },
+    {
+       "id":24,
+       "nombre":"Cinta Multiuso (903) 40 mts x 12 mm",
+       "precio":167.00,
+       "cantidad":"100",
+       "imagen": "./images/cinta-903.png"
+    },
+    {
+       "id":25,
+       "nombre":"Cinta Multiuso (903) 40 mts x 18 mm",
+       "precio":224.00,
+       "cantidad":"100",
+       "imagen": "./images/cinta-903.png"
+    },
+    {
+       "id":26,
+       "nombre":"Cinta Multiuso (903) 40 mts x 24 mm",
+       "precio":278.50,
+       "cantidad":"100",
+       "imagen": "./images/cinta-903.png"
+    },
+    {
+       "id":27,
+       "nombre":"Cinta Multiuso (903) 40 mts x 36 mm",
+       "precio":433.00,
+       "cantidad":"100",
+       "imagen": "./images/cinta-903.png"
+    },
+    {
+       "id":28,
+       "nombre":"Cinta Multiuso (903) 40 mts x 48 mm",
+       "precio":575.50,
+       "cantidad":"100",
+       "imagen": "./images/cinta-903.png"
+    }
+ ]

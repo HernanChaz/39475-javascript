@@ -1,0 +1,22 @@
+.producto {
+    max-width: 300px;
+}
+
+#buscador {
+    display: flex;
+    min-width: 960px;
+}
+
+#formulario {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+#formulario__input {
+    max-width: 50%;
+}
+
+#productos {
+    margin: 3rem auto;
+}

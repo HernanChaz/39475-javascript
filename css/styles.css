@@ -1,8 +1,44 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
 body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
     background-color: aquamarine;
+  }
+  
+.main-container {
+    flex: 1;
+}
+
+footer {
+    margin-top: auto;
 }
 
 h1, p {
     font-family: 'Courier New', Courier, monospace;
     font-weight: 700;
+}
+
+h2 {
+    padding: 3rem 0;
+}
+
+.navbar {
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+@media (max-width: 700px){
+    .navbar {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
 }
